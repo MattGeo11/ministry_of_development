@@ -1,0 +1,453 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESPA & Investments - Ministry of Development</title>
+<meta name="description" content="ESPA 2021-2027 - European resources and investments through the Ministry of Development. Managing funds for Greece's economic development.">
+<link rel="icon" href="images/logo_mindev.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0D2B55;
+  --navy-light: #1A3F70;
+  --navy-dark: #061838;
+  --gold: #C8A951;
+  --gold-light: #E8CB7A;
+  --blue-mid: #185FA5;
+  --text-dark: #1A1A2E;
+  --text-mid: #3D4A5C;
+  --text-muted: #6B7A8D;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+  --border: #DDD9CF;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, system-ui, sans-serif;
+  --shadow-sm: 0 2px 8px rgba(13, 43, 85, 0.08);
+  --shadow-md: 0 8px 24px rgba(13, 43, 85, 0.12);
+  --shadow-lg: 0 16px 48px rgba(13, 43, 85, 0.16);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body { font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: var(--text-dark); background: var(--bg); overflow-x: hidden; }
+
+.top-bar { background: var(--navy); color: var(--white); font-size: 13px; padding: 8px 24px; display: flex; justify-content: space-between; align-items: center; }
+.top-bar a { color: var(--gold-light); text-decoration: none; transition: var(--transition); }
+.top-bar a:hover { color: var(--white); }
+
+.header { background: var(--white); border-bottom: 3px solid var(--gold); padding: 16px 24px; position: relative; z-index: 100; }
+.header-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center; }
+.logo-area { display: flex; align-items: center; gap: 16px; }
+.logo { width: 52px; height: 52px; }
+.logo-text { font-family: var(--font-display); }
+
+.logo img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+.logo-greek { font-size: 24px; font-weight: 600; color: var(--navy); display: block; }
+.logo-english { font-size: 14px; color: var(--text-mid); }
+.logo-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.search-area { display: flex; gap: 8px; }
+.search-input { padding: 10px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; width: 220px; transition: var(--transition); font-family: var(--font-body); }
+.search-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200, 169, 81, 0.15); }
+.search-btn { background: var(--navy); color: var(--white); border: none; padding: 10px 20px; border-radius: var(--radius-sm); cursor: pointer; font-family: var(--font-body); font-weight: 500; transition: var(--transition); }
+.search-btn:hover { background: var(--navy-light); transform: translateY(-1px); }
+.contact-info { text-align: right; font-size: 13px; color: var(--text-mid); }
+.contact-info strong { color: var(--navy); }
+
+.nav { background: rgba(13, 43, 85, 0.95); position: sticky; top: 0; z-index: 99; backdrop-filter: blur(12px); }
+.nav-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+.nav-links { display: flex; list-style: none; gap: 0; }
+.nav-links a { display: block; color: var(--white); text-decoration: none; padding: 18px 22px; font-weight: 500; font-size: 15px; position: relative; transition: var(--transition); }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 3px; background: var(--gold); transform: translateX(-50%); transition: width 0.3s ease; }
+.nav-links a:hover { background: rgba(200, 169, 81, 0.15); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { background: rgba(200, 169, 81, 0.15); }
+.nav-links a.active::after { width: 100%; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 16px; }
+.hamburger span { width: 24px; height: 2px; background: var(--white); transition: var(--transition); }
+
+/* Page Hero */
+.page-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, var(--blue-mid) 100%); padding: 60px 24px; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 80%; height: 200%; background: radial-gradient(ellipse, rgba(200, 169, 81, 0.1) 0%, transparent 70%); }
+.page-hero-content { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
+.page-hero h1 { font-family: var(--font-display); font-size: 48px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+.page-hero p { font-size: 18px; color: rgba(255, 255, 255, 0.85); max-width: 600px; }
+
+/* Main Content */
+.main-content { max-width: 1400px; margin: 0 auto; padding: 60px 24px; }
+
+/* Stats Bar */
+.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 60px; }
+.stat-box { background: var(--white); border: 0.5px solid var(--border); border-radius: var(--radius-md); padding: 28px; text-align: center; transition: var(--transition); }
+.stat-box:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.stat-value { font-family: var(--font-display); font-size: 40px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.stat-label { font-size: 14px; color: var(--text-muted); }
+
+/* Section Layout */
+.section-title { font-family: var(--font-display); font-size: 36px; font-weight: 600; color: var(--navy); margin-bottom: 32px; text-align: center; }
+.section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+.section-grid.reverse { direction: rtl; }
+.section-grid.reverse > * { direction: ltr; }
+
+/* Info Cards */
+.info-card { background: var(--white); border: 0.5px solid var(--border); border-radius: var(--radius-md); padding: 40px; }
+.info-card h3 { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--navy); margin-bottom: 16px; }
+.info-card p { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 24px; }
+.info-list { list-style: none; }
+.info-list li { position: relative; padding-left: 28px; font-size: 15px; color: var(--text-mid); margin-bottom: 14px; line-height: 1.6; }
+.info-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; }
+
+/* Timeline */
+.timeline-card { padding: 32px; }
+.timeline-card h3 { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--navy); margin-bottom: 32px; }
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 3px; background: var(--gold); }
+.timeline-item { position: relative; padding-bottom: 32px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before { content: ''; position: absolute; left: -26px; top: 8px; width: 16px; height: 16px; background: var(--gold); border-radius: 50%; border: 3px solid var(--white); box-shadow: var(--shadow-sm); }
+.timeline-year { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.timeline-item h4 { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.timeline-item p { font-size: 14px; color: var(--text-muted); }
+
+/* Axes Grid */
+.axes-section { background: var(--white); padding: 60px 24px; margin: 60px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.axes-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.axis-card { background: var(--bg); border-radius: var(--radius-md); padding: 28px; text-align: center; transition: var(--transition); }
+.axis-card:hover { background: var(--white); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.axis-icon { width: 56px; height: 56px; background: var(--navy); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+.axis-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 2; }
+.axis-card h4 { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.axis-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.axis-budget { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 14px; color: var(--navy); font-weight: 600; }
+
+/* Investment Section */
+.investment-section { margin-bottom: 60px; }
+.investment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.investment-card { background: var(--white); border: 0.5px solid var(--border); border-radius: var(--radius-md); padding: 28px; transition: var(--transition); }
+.investment-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.investment-card h4 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+.investment-card p { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
+.investment-meta { display: flex; gap: 16px; font-size: 13px; color: var(--text-muted); }
+.investment-meta span { display: flex; align-items: center; gap: 6px; }
+.investment-meta span svg { width: 16px; height: 16px; stroke: var(--gold); }
+
+/* CTA Section */
+.cta-section { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); padding: 60px 24px; text-align: center; }
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-section h2 { font-family: var(--font-display); font-size: 32px; font-weight: 600; color: var(--white); margin-bottom: 16px; }
+.cta-section p { font-size: 16px; color: rgba(255, 255, 255, 0.8); margin-bottom: 32px; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; }
+.btn-cta-primary { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: var(--radius-md); font-size: 15px; font-weight: 600; text-decoration: none; transition: var(--transition); display: inline-block; }
+.btn-cta-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-cta-secondary { background: transparent; color: var(--white); padding: 14px 32px; border: 2px solid var(--gold); border-radius: var(--radius-md); font-size: 15px; font-weight: 600; text-decoration: none; transition: var(--transition); display: inline-block; }
+.btn-cta-secondary:hover { background: var(--gold); color: var(--navy); }
+
+/* Footer */
+.logo img, .logo svg { width: 52px; height: 52px; object-fit: contain; }
+.footer { background: var(--navy-dark); color: rgba(255, 255, 255, 0.8); padding: 60px 24px 30px; }
+.footer-inner { max-width: 1400px; margin: 0 auto; }
+.footer-brand { margin-bottom: 40px; }
+.footer-brand h4 { font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--white); margin-bottom: 12px; }
+.footer-brand p { font-size: 14px; line-height: 1.6; max-width: 400px; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.footer-col h5 { font-size: 14px; font-weight: 600; color: var(--gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 12px; }
+.footer-col a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 14px; transition: var(--transition); }
+.footer-col a:hover { color: var(--gold); }
+.footer-copyright { padding-top: 24px; text-align: center; font-size: 13px; color: rgba(255, 255, 255, 0.5); }
+
+@media (max-width: 1024px) {
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .section-grid { grid-template-columns: 1fr; }
+  .axes-grid { grid-template-columns: repeat(2, 1fr); }
+  .investment-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .top-bar { flex-direction: column; gap: 8px; text-align: center; }
+  .header-inner { grid-template-columns: 1fr; gap: 16px; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); flex-direction: column; padding: 16px; }
+  .nav-links.active { display: flex; }
+  .hamburger { display: flex; }
+  .page-hero h1 { font-size: 32px; }
+  .stats-bar { grid-template-columns: 1fr; }
+  .axes-grid { grid-template-columns: 1fr; }
+  .cta-buttons { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span>Hellenic Republic - Ελληνική Δημοκρατία</span>
+  <div>
+    <a href="espa.html">Ελληνικά</a>
+    <span style="margin: 0 12px; opacity: 0.5;">|</span>
+    <span>English</span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo">
+        <img src="images/logo_mindev.png" alt="Ministry of Development">
+      </div>
+      <div class="logo-text">
+        <span class="logo-greek">Ministry of Development</span>
+        <span class="logo-english">Ministry of Development</span>
+        <span class="logo-sub">Hellenic Republic</span>
+      </div>
+    </div>
+    <div class="search-area">
+      <input type="text" class="search-input" placeholder="Search...">
+      <button class="search-btn">Search</button>
+    </div>
+    <div class="contact-info">
+      <div>Tel: <strong>210-3332000</strong> | info@mindev.gov.gr</div>
+      <div>Mon-Fri 09:00-17:00</div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index-en.html">Home</a></li>
+      <li><a href="about-en.html">The Ministry</a></li>
+      <li><a href="responsibilities-en.html">Responsibilities</a></li>
+      <li><a href="programs-en.html">Programs & Initiatives</a></li>
+      <li><a href="news-en.html">News</a></li>
+      <li><a href="espa-en.html">ESPA & Investment</a></li>
+      <li><a href="contact-en.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <h1>ESPA & Investments</h1>
+    <p>European resources, development incentives, and investment attraction for the Greek economy.</p>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-value">€26.2bn</div>
+      <div class="stat-label">Total ESPA 2021-2027 Budget</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">€1.8bn</div>
+      <div class="stat-label">Active Resources in Implementation</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">€4.2bn</div>
+      <div class="stat-label">Total Investments 2024-2026</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">38,000+</div>
+      <div class="stat-label">Supported Businesses</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">What is ESPA</h2>
+  <div class="section-grid">
+    <div class="info-card">
+      <h3>European Structural Funds</h3>
+      <p>ESPA (European Structural Funds) is Greece's main financial instrument for promoting economic development and social cohesion. Through ESPA 2021-2027, significant resources are available to support businesses, innovation, and sustainability.</p>
+      <ul class="info-list">
+        <li>Funding for small and medium enterprises</li>
+        <li>Innovation and research support</li>
+        <li>Green transition support</li>
+        <li>Digital transformation</li>
+        <li>Job creation</li>
+        <li>Export orientation enhancement</li>
+      </ul>
+    </div>
+    <div class="info-card timeline-card">
+      <h3>ESPA History in Greece</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">1989-1993</span>
+          <h4>First Framework Program</h4>
+          <p>First Community funding for Greece.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2000-2006</span>
+          <h4>ESPA 2000-2006</h4>
+          <p>Total budget €24.4 billion.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2007-2013</span>
+          <h4>ESPA 2007-2013</h4>
+          <p>€20.4 billion for development and social cohesion.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2014-2020</span>
+          <h4>ESPA 2014-2020</h4>
+          <p>€10.6 billion with focus on competitiveness.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2021-2027</span>
+          <h4>ESPA 2021-2027</h4>
+          <p>€26.2 billion with 6 intervention areas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="axes-section">
+    <h2 class="section-title">ESPA 2021-2027 Intervention Axes</h2>
+    <div class="axes-grid">
+      <div class="axis-card">
+        <div class="axis-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h4>Competitiveness & Innovation</h4>
+        <p>Supporting innovative businesses, digital transition, and technology transfer.</p>
+        <div class="axis-budget">€8.5 billion</div>
+      </div>
+      <div class="axis-card">
+        <div class="axis-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+        </div>
+        <h4>Green Transition</h4>
+        <p>Energy efficiency, renewable energy sources, and environmental protection.</p>
+        <div class="axis-budget">€6.2 billion</div>
+      </div>
+      <div class="axis-card">
+        <div class="axis-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h4>Digital Convergence</h4>
+        <p>Digital infrastructure, digital skills, and business digital transformation.</p>
+        <div class="axis-budget">€3.8 billion</div>
+      </div>
+      <div class="axis-card">
+        <div class="axis-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Employment & Social Cohesion</h4>
+        <p>Job creation, social inclusion, and reducing inequalities.</p>
+        <div class="axis-budget">€4.5 billion</div>
+      </div>
+      <div class="axis-card">
+        <div class="axis-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h4>Education & Training</h4>
+        <p>Skills improvement, educational infrastructure, and lifelong learning.</p>
+        <div class="axis-budget">€2.0 billion</div>
+      </div>
+      <div class="axis-card">
+        <div class="axis-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h4>Technical Assistance</h4>
+        <p>Program management, monitoring, and evaluation support.</p>
+        <div class="axis-budget">€1.2 billion</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Types of Investments</h2>
+  <div class="investment-section">
+    <div class="investment-grid">
+      <div class="investment-card">
+        <h4>Foreign Direct Investment (FDI)</h4>
+        <p>Attracting foreign investment in strategic sectors such as technology, energy, and tourism. One-stop services for investors.</p>
+        <div class="investment-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Open
+          </span>
+          <span>Target: €5 billion annually</span>
+        </div>
+      </div>
+      <div class="investment-card">
+        <h4>Strategic Investments</h4>
+        <p>Investments over €5 million in strategically important sectors with special incentives and fast licensing procedures.</p>
+        <div class="investment-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Open
+          </span>
+          <span>Minimum: €5 million</span>
+        </div>
+      </div>
+      <div class="investment-card">
+        <h4>ESPA Investments</h4>
+        <p>Funding from the European Structural Funds for investments in manufacturing, services, and tourism.</p>
+        <div class="investment-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Open
+          </span>
+          <span>Support up to 65%</span>
+        </div>
+      </div>
+      <div class="investment-card">
+        <h4>Development Law Investments</h4>
+        <p>Incentives for investments contributing to economic development, employment, and regional convergence.</p>
+        <div class="investment-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Open
+          </span>
+          <span>Multiple rounds</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-inner">
+      <h2>Want to invest in Greece?</h2>
+      <p>The Ministry of Development provides support at every stage of the investment process. Contact us for information and guidance.</p>
+      <div class="cta-buttons">
+        <a href="contact-en.html" class="btn-cta-primary">Contact</a>
+        <a href="programs-en.html" class="btn-cta-secondary">Programs</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h4>Ministry of Development</h4>
+      <p>Hellenic Republic - Ministry of Development.</p>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col"><h5>The Ministry</h5><ul><li><a href="about-en.html">Mission</a></li><li><a href="about-en.html">Organizational Chart</a></li><li><a href="#">Legislation</a></li></ul></div>
+      <div class="footer-col"><h5>Programs</h5><ul><li><a href="espa-en.html">ESPA 2021-2027</a></li><li><a href="programs-en.html">Development Law</a></li><li><a href="programs-en.html">Digital Upgrade</a></li><li><a href="programs-en.html">Export Promotion</a></li></ul></div>
+      <div class="footer-col"><h5>Useful Links</h5><ul><li><a href="news-en.html">News</a></li><li><a href="contact-en.html">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Accessibility</a></li></ul></div>
+      <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="about-en.html">About</a></li><li><a href="programs-en.html">Programs</a></li><li><a href="news-en.html">News</a></li><li><a href="contact-en.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-copyright">© 2026 Ministry of Development - All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+
+const currentPage = window.location.pathname.split('/').pop() || 'espa-en.html';
+document.querySelectorAll('.nav-links a').forEach(link => { if (link.getAttribute('href') === currentPage) link.classList.add('active'); });
+</script>
+
+</body>
+</html>
